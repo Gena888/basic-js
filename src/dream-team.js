@@ -14,13 +14,13 @@ module.exports = function createDreamTeam(members) {
   }
 
   for (n = 0; n < namesArr.length; n++) {
-    let firstChar = namesArr[n].charAt(0)
-    while (firstChar == ' ') {
-      let i = 0
-      firstChar = namesArr[n].charAt(i)
-      i++
+    let inNameLettersArr = []
+    for (i = 0; i < namesArr[n].length; i++) {
+      if (namesArr[n][i] !== ' ') {
+        inNameLettersArr.push(namesArr[n][i])
+      }
     }
-    lettersArr.push(firstChar)
+    lettersArr.push(inNameLettersArr[0])
   }
 
   sortedLettersArr = lettersArr.sort()
